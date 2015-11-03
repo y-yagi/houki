@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+$:.unshift "#{File.expand_path(File.dirname(__FILE__))}/../lib"
+
+require 'houki'
+require 'houki/options'
+require 'houki/version'
+
+begin
+  options = Houki::Options.parse!(ARGV)
+rescue OptionParser::ParseError => e
+  $stderr.puts e.message.capitalize
+  $stderr.puts "Please see `houki --help` for valid options"
+  exit(false)
+end
+
+Houki.run(options)
