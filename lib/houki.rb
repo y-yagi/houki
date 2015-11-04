@@ -1,5 +1,6 @@
 require "houki/version"
 require "houki/config"
+require "houki/options"
 require "houki/executors/directory"
 
 module Houki
